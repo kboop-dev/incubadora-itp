@@ -23,8 +23,8 @@ function clean(col, body = {}) {
 export default async function handler(req, res) {
   const col = req.query.col;
   if (!FIELDS[col]) return res.status(404).json({ error: 'No existe' });
-  const c = (await db()).collection(col);
   try {
+    const c = (await db()).collection(col);
     if (req.method === 'GET') {
       const filtro = {};
       if (col === 'items' && !(isAdmin(req) && req.query.all)) filtro.estatus = 'publicado';
@@ -44,5 +44,5 @@ export default async function handler(req, res) {
     }
     if (req.method === 'DELETE') { await c.deleteOne({ _id: id }); return res.json({ ok: true }); }
     res.status(405).json({ error: 'Método no permitido' });
-  } catch (e) { res.status(400).json({ error: e.message }); }
+  } catch (e) { console.error(e); res.status(e.name?.startsWith('Mongo') ? 500 : 400).json({ error: e.message }); }
 }

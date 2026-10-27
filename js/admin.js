@@ -10,8 +10,8 @@ const COLS = {
   items: { label: 'Convocatorias, proyectos y eventos', title: 'titulo', fields: [
     ['tipo', 'Tipo', 'select', ['convocatoria', 'proyecto', 'evento']], ['estatus', 'Estatus', 'select', ['publicado', 'borrador']],
     ['titulo', 'Título', 'text'], ['fecha', 'Fecha', 'date'], ['carrera', 'Carrera / área', 'text'], ['responsable', 'Responsable', 'text'],
-    ['imagen', 'URL de imagen', 'url'], ['enlace', 'URL de enlace', 'url'], ['descripcion', 'Descripción', 'textarea']] },
-  gallery: { label: 'Galería', title: 'alt', fields: [['url', 'URL de la foto', 'url'], ['alt', 'Descripción de la foto', 'text'], ['orden', 'Orden', 'number']] },
+    ['imagen', 'URL de imagen', 'text'], ['enlace', 'URL de enlace', 'text'], ['descripcion', 'Descripción', 'textarea']] },
+  gallery: { label: 'Galería', title: 'alt', fields: [['url', 'URL de la foto', 'text'], ['alt', 'Descripción de la foto', 'text'], ['orden', 'Orden', 'number']] },
 };
 let token = sessionStorage.getItem('tok'), col = 'items', editId = null;
 const $ = (id) => document.getElementById(id), say = (t, ok = true) => { $('amsg').textContent = t; $('amsg').className = 'text-sm mt-3 ' + (ok ? 'text-green-700' : 'text-red-700'); };

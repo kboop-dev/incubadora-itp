@@ -11,7 +11,7 @@ export const h = (tag, attrs = {}, ...kids) => {
   return el;
 };
 // Solo permite enlaces http(s); bloquea "javascript:" y similares.
-export const safeUrl = (u) => (/^https?:\/\//i.test(u || '') ? u : '#');
+export const safeUrl = (u) => (/^(https?:\/\/|assets\/|\/(?!\/))/i.test(u || '') ? u : '#');
 
 export async function api(path, { method = 'GET', body, token } = {}) {
   const r = await fetch('/api/' + path, {

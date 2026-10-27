@@ -5,7 +5,7 @@ import crypto from 'crypto';
 // Se reutiliza la conexión entre invocaciones (evita abrir una nueva en cada request).
 let client;
 export async function db() {
-  client ||= new MongoClient(process.env.MONGODB_URI).connect();
+  client ||= new MongoClient(process.env.MONGODB_URI, { serverSelectionTimeoutMS: 5000 }).connect();
   return (await client).db(process.env.MONGODB_DB || 'incubadora_itp');
 }
 
