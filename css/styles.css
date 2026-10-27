@@ -1,0 +1,14 @@
+/* css/styles.css — Solo lo que Tailwind no cubre. Colores en js/tailwind-config (en el <head>). */
+:root { --azul:#1b365d; --guinda:#611232; --dorado:#bc955c; }
+body { font-family: 'Inter', system-ui, sans-serif; color:#1e293b; }
+.nav-link { display:block; padding:.4rem 0; font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--azul); }
+.nav-link.sub { font-weight:500; text-transform:none; letter-spacing:0; color:#475569; }
+.nav-link:hover { color:var(--guinda); }
+:focus-visible { outline:3px solid var(--dorado); outline-offset:2px; }
+.card { background:#fff; border:1px solid #e2e8f0; border-top:3px solid var(--azul); border-radius:.5rem; }
+.btn { display:inline-block; background:var(--azul); color:#fff; font-weight:700; font-size:12px; letter-spacing:.05em; text-transform:uppercase; padding:.7rem 1.2rem; border-radius:.375rem; }
+.btn:hover { background:var(--guinda); }
+.carousel { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; gap:1rem; }
+.carousel > * { flex:0 0 100%; scroll-snap-align:center; }
+@media (min-width:768px){ .carousel > * { flex-basis:calc(50% - .5rem); } }
+@media (prefers-reduced-motion:reduce){ .carousel { scroll-behavior:auto; } }
