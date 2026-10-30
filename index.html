@@ -4,112 +4,95 @@
   <!-- ===== HEAD: metadatos, fuente Inter, Tailwind (CDN) y paleta institucional ===== -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Incubadora de Proyectos | Instituto Tecnológico de Pachuca</title>
+  <title>Incubadora CEITP | Instituto Tecnológico de Pachuca</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config = { theme: { extend: { colors: { azul: '#1b365d', guinda: '#611232', dorado: '#bc955c' } } } }</script>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-slate-50">
+<body>
   <a href="#contenido" class="sr-only focus:not-sr-only p-2 bg-white">Saltar al contenido</a>
-  <header id="site-header"></header> <!-- lo dibuja js/layout.js -->
+  <header id="site-header"></header> <!-- lo dibuja js/layout.js; menú en js/config.js -->
 
   <main id="contenido">
-    <!-- ===== HERO ===== -->
-    <section class="hero text-white">
-      <div class="max-w-7xl mx-auto px-4 py-16 md:py-24">
-        <p class="text-dorado text-sm font-bold mb-3">Instituto Tecnológico de Pachuca</p>
-        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">Incubadora de Proyectos</h1>
-        <p class="mt-5 max-w-2xl text-slate-200 text-lg">Acompañamos a estudiantes y egresados para convertir una idea en un proyecto real: asesoría, mentoría y vinculación con el sector productivo.</p>
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="#convocatorias" class="btn !bg-dorado !text-azul">Ver convocatorias</a>
-          <a href="#contacto" class="btn !bg-white/10 border border-white/40">Quiero incubar mi idea</a>
-        </div>
+    <!-- ===== PORTADA. Imagen: variable --hero-img en css/styles.css (assets/hero.svg) ===== -->
+    <section id="inicio" class="hero">
+      <div class="max-w-7xl mx-auto px-4 py-16 hero-in">
+        <p class="kicker">Instituto Tecnológico de Pachuca</p>
+        <h1 class="mt-3">Incubadora <span class="text-dorado">CEITP</span></h1>
+        <p class="mt-3 text-lg md:text-xl font-semibold text-slate-100 max-w-2xl">Centro de Emprendimiento e Innovación Tecnológica de Pachuca</p>
+        <p class="mt-3 text-base md:text-lg text-slate-200 max-w-2xl italic">Donde la imaginación y las ideas de ingeniería se convierten en soluciones reales</p>
+        <div class="mt-8 flex flex-wrap gap-3"><a href="#convocatorias" class="btn btn-gold">Ver convocatorias</a><a href="#contacto" class="btn btn-ghost">Quiero incubar mi idea</a></div>
+      </div>
+      <a href="#nosotros" class="scroll-hint" aria-label="Ir a Quiénes somos">⌄</a>
+    </section>
+
+    <!-- ===== QUIÉNES SOMOS: objetivo general, objetivos específicos, misión y visión ===== -->
+    <section id="nosotros" class="max-w-7xl mx-auto px-4 py-16">
+      <p class="kicker reveal">Quiénes somos</p><h2 class="title reveal">Innovar desde las aulas y laboratorios</h2>
+      <div class="panel-dark reveal mt-8 p-6 md:p-10"><p class="kicker">Objetivo general</p>
+        <p class="mt-3 text-lg md:text-xl leading-relaxed max-w-4xl">Fomentar la cultura de innovación, emprendimiento y desarrollo tecnológico entre los estudiantes de ingeniería, impulsando la generación de proyectos, prototipos, propiedad intelectual y empresas de base tecnológica que contribuyan a la solución de problemas del entorno productivo y social.</p></div>
+      <h3 class="reveal mt-12 text-xl font-bold text-azul">Objetivos específicos</h3>
+      <ul class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"><li class="card reveal p-5 flex gap-3"><span class="num">1</span><p class="text-sm text-slate-700">Desarrollar proyectos de innovación tecnológica desde las aulas y laboratorios.</p></li><li class="card reveal p-5 flex gap-3"><span class="num">2</span><p class="text-sm text-slate-700">Fomentar la cultura de protección de la propiedad intelectual.</p></li><li class="card reveal p-5 flex gap-3"><span class="num">3</span><p class="text-sm text-slate-700">Promover la creación de prototipos y productos tecnológicos.</p></li><li class="card reveal p-5 flex gap-3"><span class="num">4</span><p class="text-sm text-slate-700">Impulsar la formación de startups y spin-offs universitarias.</p></li><li class="card reveal p-5 flex gap-3"><span class="num">5</span><p class="text-sm text-slate-700">Fortalecer la vinculación con empresas, organismos y sociedad.</p></li><li class="card reveal p-5 flex gap-3"><span class="num">6</span><p class="text-sm text-slate-700">Generar soluciones a problemas locales, regionales y nacionales mediante la ingeniería.</p></li></ul>
+      <div class="mt-12 grid gap-5 md:grid-cols-2">
+        <article class="mv m reveal" data-icon="🎯"><p class="kicker !text-white/80">Misión</p><p class="mt-3 text-lg leading-relaxed">Inspirar a los estudiantes a convertir su conocimiento en acción, proporcionando un espacio donde la ingeniería, la innovación y el emprendimiento se integren para generar soluciones que mejoren la calidad de vida y promuevan el desarrollo sostenible.</p></article>
+        <article class="mv v reveal" data-icon="🔭"><p class="kicker !text-white/80">Visión</p><p class="mt-3 text-lg leading-relaxed">Construir una comunidad de jóvenes ingenieros capaces de liderar la transformación tecnológica de su entorno, creando soluciones, empresas y proyectos que generen un impacto positivo a nivel local, nacional e internacional.</p></article>
       </div>
     </section>
 
-    <!-- ===== QUIÉNES SOMOS (editar texto directamente aquí) ===== -->
-    <section id="nosotros" class="max-w-7xl mx-auto px-4 py-14 grid md:grid-cols-2 gap-10">
-      <div>
-        <h2 class="text-3xl font-extrabold text-azul">¿Quiénes somos?</h2>
-        <p class="mt-4 text-slate-600">La Incubadora de Proyectos del ITP es el espacio donde las ideas de nuestra comunidad se validan, se desarrollan y se conectan con oportunidades de financiamiento y mercado.</p>
-        <p class="mt-3 text-slate-600">Trabajamos con alumnos de todas las ingenierías y con docentes que fungen como asesores.</p>
-      </div>
-      <dl class="grid grid-cols-2 gap-4">
-        <div class="card p-5"><dt class="font-bold text-azul">Misión</dt><dd class="text-sm text-slate-600 mt-1">Impulsar proyectos innovadores con impacto social y tecnológico.</dd></div>
-        <div class="card p-5"><dt class="font-bold text-azul">Visión</dt><dd class="text-sm text-slate-600 mt-1">Ser referente regional en emprendimiento universitario.</dd></div>
-      </dl>
-    </section>
+    <!-- ===== PRODUCTOS (texto fijo: editar aquí) ===== -->
+    <section id="productos" class="bg-white border-y border-slate-200"><div class="max-w-7xl mx-auto px-4 py-16">
+      <p class="kicker reveal">Lo que generamos</p><h2 class="title reveal">Productos de la incubadora</h2>
+      <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"><article class="card pcard reveal p-5"><span class="ico">📄</span><h3 class="font-bold text-azul text-lg mt-1">Investigación científica</h3><ul><li>Artículos científicos en revistas indexadas</li><li>Artículos de divulgación científica</li><li>Capítulos de libro</li><li>Ponencias en congresos nacionales e internacionales</li><li>Reportes técnicos</li></ul></article><article class="card pcard reveal p-5"><span class="ico">⚖️</span><h3 class="font-bold text-azul text-lg mt-1">Propiedad intelectual</h3><ul><li>Patentes de invención</li><li>Modelos de utilidad</li><li>Diseños industriales</li><li>Derechos de autor sobre software</li><li>Registros de marca</li><li>Secretos industriales</li></ul></article><article class="card pcard reveal p-5"><span class="ico">💻</span><h3 class="font-bold text-azul text-lg mt-1">Productos tecnológicos</h3><ul><li>Prototipos industriales: equipos y maquinaria, software, apps móviles, plataformas web, dispositivos electrónicos</li><li>Algoritmos y modelos computacionales</li><li>Bases de datos tecnológicas</li></ul></article><article class="card pcard reveal p-5"><span class="ico">📈</span><h3 class="font-bold text-azul text-lg mt-1">Productos empresariales</h3><ul><li>Planes de negocio</li><li>Modelos de negocio validados</li><li>Empresas incubadas</li></ul></article><article class="card pcard reveal p-5"><span class="ico">🎓</span><h3 class="font-bold text-azul text-lg mt-1">Académicos y formativos</h3><ul><li>Tesis de licenciatura</li><li>Proyectos integradores</li><li>Casos de estudio</li><li>Manuales técnicos</li><li>Material didáctico especializado</li></ul></article><article class="card pcard reveal p-5"><span class="ico">🤝</span><h3 class="font-bold text-azul text-lg mt-1">Vinculación y transferencia</h3><ul><li>Convenios universidad-empresa</li><li>Contratos de transferencia tecnológica</li><li>Consultorías especializadas</li><li>Servicios tecnológicos</li><li>Laboratorios certificados</li><li>Certificaciones y validaciones tecnológicas</li></ul></article><article class="card pcard reveal p-5"><span class="ico">🌱</span><h3 class="font-bold text-azul text-lg mt-1">Impacto e innovación</h3><ul><li>Empleos generados</li><li>Empresas creadas</li><li>Inversión captada</li><li>Ventas de productos tecnológicos</li><li>Soluciones implementadas en la industria</li><li>Impacto social y ambiental de las innovaciones</li></ul></article></div></div></section>
 
-    <!-- ===== GALERÍA: carrusel alimentado desde la colección "gallery" (se administra en admin.html) ===== -->
-    <section id="galeria" class="bg-white border-y border-slate-200" aria-label="Galería">
-      <div class="max-w-7xl mx-auto px-4 py-12">
-        <div class="flex items-end justify-between mb-5">
-          <h2 class="text-3xl font-extrabold text-azul">Galería</h2>
-          <div class="flex gap-2">
-            <button id="prev" class="btn" aria-label="Anterior">‹</button><button id="next" class="btn" aria-label="Siguiente">›</button>
-          </div>
-        </div>
-        <div id="carousel" class="carousel" tabindex="0"></div>
+    <!-- ===== GALERÍA: carrusel automático (fotos en js/config.js o en el panel admin) ===== -->
+    <section id="galeria" class="max-w-5xl mx-auto px-4 py-16" aria-label="Galería">
+      <p class="kicker reveal">Galería</p><h2 class="title reveal mb-8">Así se vive la incubadora</h2>
+      <div id="slider" class="slider reveal" aria-roledescription="carrusel" tabindex="0">
+        <div id="track" class="track"></div>
+        <button id="prev" class="sl-btn left-3" aria-label="Anterior">‹</button><button id="next" class="sl-btn right-3" aria-label="Siguiente">›</button>
+        <div id="dots" class="dots"></div>
       </div>
     </section>
 
-    <!-- ===== CONVOCATORIAS / PROYECTOS / EVENTOS (tarjetas dinámicas desde MongoDB) ===== -->
-    <section id="convocatorias" class="max-w-7xl mx-auto px-4 py-14">
-      <h2 class="text-3xl font-extrabold text-azul">Convocatorias, proyectos y eventos</h2>
-      <div id="tabs" class="mt-5 flex flex-wrap gap-2" role="tablist"></div>
-      <div id="grid" class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" aria-live="polite"></div>
+    <!-- ===== CONVOCATORIAS / PROYECTOS / EVENTOS (desde MongoDB) ===== -->
+    <section id="convocatorias" class="bg-white border-y border-slate-200"><div class="max-w-7xl mx-auto px-4 py-16">
+      <p class="kicker reveal">Participa</p><h2 class="title reveal">Convocatorias, proyectos y eventos</h2>
+      <div id="tabs" class="mt-6 flex flex-wrap gap-2" role="tablist"></div>
+      <div id="grid" class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" aria-live="polite"></div></div></section>
+
+    <!-- ===== FASES Y REQUISITOS ===== -->
+    <section id="fases" class="max-w-7xl mx-auto px-4 py-16">
+      <p class="kicker reveal">Ruta de incubación</p><h2 class="title reveal">Fases de incubación</h2>
+      <ol class="fases mt-12">
+        <li class="fase reveal"><b class="text-azul">Preincubación</b><p class="text-sm text-slate-600 mt-1">Validación de la idea y del problema.</p></li>
+        <li class="fase reveal"><b class="text-azul">Incubación</b><p class="text-sm text-slate-600 mt-1">Prototipo, modelo de negocio y mentoría.</p></li>
+        <li class="fase reveal"><b class="text-azul">Aceleración</b><p class="text-sm text-slate-600 mt-1">Pruebas con usuarios reales y plan de crecimiento.</p></li>
+        <li class="fase reveal"><b class="text-azul">Graduación</b><p class="text-sm text-slate-600 mt-1">Presentación ante inversionistas y vinculación.</p></li>
+      </ol>
+      <div class="card reveal mt-12 p-6 md:p-8 max-w-3xl"><h3 class="text-2xl font-extrabold text-azul">Requisitos</h3>
+        <ul class="check mt-3 text-slate-700"><li>Ser alumno activo o egresado del ITP.</li><li>Presentar una idea o proyecto con descripción breve.</li><li>Contar con al menos un docente asesor.</li><li>Asistir a las sesiones de seguimiento.</li></ul></div>
     </section>
 
-    <!-- ===== FASES Y REQUISITOS (contenido estático: editar aquí) ===== -->
-    <section id="fases" class="bg-white border-y border-slate-200">
-      <div class="max-w-7xl mx-auto px-4 py-14 grid lg:grid-cols-2 gap-10">
-        <div>
-          <h2 class="text-3xl font-extrabold text-azul">Fases de incubación</h2>
-          <ol class="mt-5 space-y-3">
-            <li class="card p-4"><b>1. Preincubación.</b> Validación de la idea y del problema.</li>
-            <li class="card p-4"><b>2. Incubación.</b> Prototipo, modelo de negocio y mentoría.</li>
-            <li class="card p-4"><b>3. Aceleración.</b> Pruebas con usuarios reales y plan de crecimiento.</li>
-            <li class="card p-4"><b>4. Graduación.</b> Presentación ante inversionistas y vinculación.</li>
-          </ol>
-        </div>
-        <div>
-          <h2 class="text-3xl font-extrabold text-azul">Requisitos</h2>
-          <ul class="mt-5 list-disc pl-5 space-y-2 text-slate-600">
-            <li>Ser alumno activo o egresado del ITP.</li>
-            <li>Presentar una idea o proyecto con descripción breve.</li>
-            <li>Contar con al menos un docente asesor.</li>
-            <li>Asistir a las sesiones de seguimiento.</li>
-          </ul>
-        </div>
+    <!-- ===== CONTACTO + ENLACES DE INTERÉS ===== -->
+    <section id="contacto" class="contact-bg on-dark"><div class="max-w-7xl mx-auto px-4 py-16 grid gap-10 lg:grid-cols-5">
+      <div class="lg:col-span-2 text-white reveal">
+        <p class="kicker">Contacto</p><h2 class="title">Hablemos de tu proyecto</h2>
+        <p class="mt-6 text-slate-300 text-sm">Carr. México-Pachuca Km 87.5, Pachuca, Hidalgo<br>Tel. (771) 711 3073</p>
+        <h3 class="mt-8 font-bold">Enlaces de interés</h3>
+        <a class="elink" href="https://itpachuca.edu.mx">Sitio oficial ITP <span>↗</span></a>
+        <a class="elink" href="https://www.tecnm.mx">TecNM <span>↗</span></a>
+        <a class="elink" href="https://itpachuca.edu.mx/alumnos">Portal de estudiantes <span>↗</span></a>
+        <a class="elink" href="https://itpachuca.edu.mx/publicaciones">Publicaciones <span>↗</span></a>
       </div>
-    </section>
-
-    <!-- ===== ENLACES ===== -->
-    <section class="max-w-7xl mx-auto px-4 py-14" aria-labelledby="enl">
-      <h2 id="enl" class="text-3xl font-extrabold text-azul">Enlaces de interés</h2>
-      <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <a class="card p-5 hover:shadow" href="https://itpachuca.edu.mx"><b class="text-azul">Sitio oficial ITP</b><p class="text-sm text-slate-600 mt-1">Portal institucional.</p></a>
-        <a class="card p-5 hover:shadow" href="https://www.tecnm.mx"><b class="text-azul">TecNM</b><p class="text-sm text-slate-600 mt-1">Tecnológico Nacional de México.</p></a>
-        <a class="card p-5 hover:shadow" href="https://itpachuca.edu.mx/alumnos"><b class="text-azul">Portal de estudiantes</b><p class="text-sm text-slate-600 mt-1">Trámites y servicios.</p></a>
-        <a class="card p-5 hover:shadow" href="https://itpachuca.edu.mx/publicaciones"><b class="text-azul">Publicaciones</b><p class="text-sm text-slate-600 mt-1">Producción científica.</p></a>
-      </div>
-    </section>
-
-    <!-- ===== CONTACTO ===== -->
-    <section id="contacto" class="bg-white border-t border-slate-200">
-      <div class="max-w-2xl mx-auto px-4 py-14">
-        <h2 class="text-3xl font-extrabold text-azul">Contacto</h2>
-        <form id="form" class="mt-6 space-y-4" novalidate>
-          <label class="block text-sm font-medium">Nombre<input name="nombre" required minlength="2" maxlength="100" autocomplete="name" class="mt-1 w-full border rounded p-2"></label>
-          <label class="block text-sm font-medium">Correo<input name="correo" type="email" required maxlength="120" autocomplete="email" class="mt-1 w-full border rounded p-2"></label>
-          <label class="block text-sm font-medium">Mensaje<textarea name="mensaje" required minlength="10" maxlength="2000" rows="5" class="mt-1 w-full border rounded p-2"></textarea></label>
-          <button class="btn" type="submit">Enviar mensaje</button>
-          <p id="msg" role="status" class="text-sm"></p>
-        </form>
-      </div>
-    </section>
+      <form id="form" class="lg:col-span-3 bg-white rounded-2xl shadow-2xl p-6 md:p-8 space-y-4 reveal" novalidate>
+        <h3 class="text-xl font-extrabold text-azul">Envíanos un mensaje</h3>
+        <label class="block text-sm font-medium">Nombre<input name="nombre" required minlength="2" maxlength="100" autocomplete="name" class="field"></label>
+        <label class="block text-sm font-medium">Correo<input name="correo" type="email" required maxlength="120" autocomplete="email" class="field"></label>
+        <label class="block text-sm font-medium">Mensaje<textarea name="mensaje" required minlength="10" maxlength="2000" rows="5" class="field"></textarea></label>
+        <button class="btn" type="submit">Enviar mensaje</button><p id="msg" role="status" class="text-sm"></p>
+      </form></div></section>
   </main>
 
   <footer id="site-footer" class="bg-[#0b1220] text-white"></footer>

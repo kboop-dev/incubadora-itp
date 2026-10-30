@@ -44,7 +44,7 @@ $('aform').addEventListener('submit', async (e) => {
 });
 
 async function load() {
-  const rows = await api(col + (col === 'items' ? '?all=1' : ''), { token });
+  let rows; try { rows = await api(col + (col === 'items' ? '?all=1' : ''), { token }); } catch (e) { say('No se pudo leer la base de datos: ' + e.message, false); return; }
   $('alist').replaceChildren(...rows.map((r) => h('li', { class: 'card p-3 flex items-center justify-between gap-3' },
     h('span', {}, h('b', {}, r[COLS[col].title] || '(sin título)'), r.tipo ? ` — ${r.tipo} (${r.estatus})` : ''),
     h('span', { class: 'flex gap-3 text-sm' },
